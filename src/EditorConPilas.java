@@ -21,6 +21,34 @@ class Pila {
             System.out.println("La pila está llena!");// imprime el mensaje la pila esta llena
         }
     }
+     //Creación del metodo principal que controla el programa.
+    public void ejecutar() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(" EDITOR DE TEXTO CON PILAS ");
+        System.out.println("Ingresa tu información (presiona 5 para finalizar):");
+
+        while (true) {
+            // Pedir información al usuario
+            System.out.print("\nEscribir texto: ");
+            String informacion = scanner.nextLine();
+
+            // Si escribe 5 termina el programa
+            if (informacion.equalsIgnoreCase("5")) {
+                System.out.println("Programa Finalizado");
+                break;
+            }
+
+            // Este campo agrega la informacion a la pila principal
+            pilaPrincipal.push(informacion);
+            System.out.println("Informacion guardada: '" + informacion + "'");
+
+            // Mostrar el menú despues de ingresar información
+            mostrarMenu(scanner);
+        }
+
+        scanner.close();
+    }
 
     // pop(): quitar y devolver el elemento de arriba
     public String pop() {
@@ -57,4 +85,32 @@ public class EditorConPilas {
     public EditorConPilas() {
         this.pilaPrincipal = new Pila(50);   // Tamaño maximo de la pila de 50 elementos
         this.pilaDeshechos = new Pila(50);   // Tamaño maximo de la pila de 50 elementos
+    }
+     //Creación del metodo principal que controla el programa.
+    public void ejecutar() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(" EDITOR DE TEXTO CON PILAS ");
+        System.out.println("Ingresa tu información (presiona 5 para finalizar):");
+
+        while (true) {
+            // Pedir información al usuario
+            System.out.print("\nEscribir texto: ");
+            String informacion = scanner.nextLine();
+
+            // Si escribe 5 termina el programa
+            if (informacion.equalsIgnoreCase("5")) {
+                System.out.println("Programa Finalizado");
+                break;
+            }
+
+            // Este campo agrega la informacion a la pila principal
+            pilaPrincipal.push(informacion);
+            System.out.println("Informacion guardada: '" + informacion + "'");
+
+            // Mostrar el menú despues de ingresar información
+            mostrarMenu(scanner);
+        }
+
+        scanner.close();
     }
