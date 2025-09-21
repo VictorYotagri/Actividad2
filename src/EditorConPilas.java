@@ -114,3 +114,16 @@ public class EditorConPilas {
 
         scanner.close();
     }
+     // Mostrar menú con las opciones
+    private void mostrarMenu(Scanner scanner) {
+        int opcion = 0;
+        boolean entradaValida = false;
+
+        do {
+            System.out.println("\n Opciones: ");
+            System.out.println("1: Deshacer");
+            System.out.println("2: Rehacer");
+            System.out.println("3: ver información ingresada");
+            System.out.println("4: Continuar ingresando su información ");
+            System.out.println("5: Salir");
+            System.out.print("Elige una opción: ");
