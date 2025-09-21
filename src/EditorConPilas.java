@@ -47,3 +47,14 @@ class Pila {
     public boolean isEmpty() {
         return tope == -1;
     }
+
+    // Clase principal
+public class EditorConPilas {
+    private Pila pilaPrincipal;    // Pila que almacena la información que ingresa el usuario
+    private Pila pilaDeshechos;    // Pila que almacena los datos que el usuario deshace
+
+    // Constructor
+    public EditorConPilas() {
+        this.pilaPrincipal = new Pila(50);   // Tamaño maximo de la pila de 50 elementos
+        this.pilaDeshechos = new Pila(50);   // Tamaño maximo de la pila de 50 elementos
+    }
