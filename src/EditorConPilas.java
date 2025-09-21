@@ -11,3 +11,24 @@ class Pila {
         this.elementos = new String[tamaño];
         this.tope = -1;  // el -1 significa que está vacía
     }
+ // push(): agrega el elemento arriba de la pila
+    public void push(String elemento) {
+        if (tope < tamaño - 1) {  // Si hay espacio
+            tope++;
+            elementos[tope] = elemento;
+        } else {
+            System.out.println("La pila está llena!");// imprime el mensaje la pila esta llena
+        }
+    }
+
+    // pop(): quitar y devolver el elemento de arriba
+    public String pop() {
+        if (!isEmpty()) {  // Si no está vacía
+            String elemento = elementos[tope];
+            elementos[tope] = null;  // Limpiar la posición
+            tope--;
+            return elemento;
+        } else {
+            return null;
+        }
+    }
