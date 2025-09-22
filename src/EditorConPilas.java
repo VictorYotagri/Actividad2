@@ -127,3 +127,44 @@ public class EditorConPilas {
             System.out.println("4: Continuar ingresando su información ");
             System.out.println("5: Salir");
             System.out.print("Elige una opción: ");
+
+            try {
+                opcion = Integer.parseInt(scanner.nextLine());
+                entradaValida = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingresa informacion valida.");
+                entradaValida = false;
+            }
+
+            if (entradaValida) {
+                switch (opcion) {
+                    case 1:
+                        deshacer();
+                        break;
+
+                    case 2:
+                        rehacer();
+                        break;
+
+                    case 3:
+                        verInformacion();
+                        break;
+
+                    case 4:
+                        System.out.println("Continuando...");
+                        break;
+
+                    /// al precionar la tecla 5 finaliza la ejecucion del programa.
+                    case 5:
+                        System.out.println("El programa se cerrará");
+                        System.exit(0);
+                        break;
+
+                    default:
+                        System.out.println("Opción no válida. Intenta de nuevo.");
+                        entradaValida = false;
+                }
+            }
+
+        } while (!entradaValida || opcion != 4);
+    }
