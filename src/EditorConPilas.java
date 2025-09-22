@@ -180,3 +180,39 @@ public class EditorConPilas {
             System.out.println("No hay información que deshacer.");
         }
     }
+
+    // Rehacer: quita el último elemento de la pila de deshechos y lo pone de vuelta en la pila principal
+    private void rehacer() {
+        if (!pilaDeshechos.isEmpty()) {
+            String datoRehacer = pilaDeshechos.pop();
+            pilaPrincipal.push(datoRehacer);
+            System.out.println("Se rehizo: '" + datoRehacer + "'");
+            System.out.println("El dato regresó a la pila principal.");
+        } else {
+            System.out.println("No hay información que rehacer.");
+        }
+    }
+
+    // Ver toda la información ingresada (que está en la pila principal)
+    private void verInformacion() {
+        System.out.println("\n Información actual");
+        System.out.print("Pila Principal (informacion activa):");
+        pilaPrincipal.mostrarTodos();
+
+        System.out.print("Pila de Deshechos (informacion deshecha):");
+        pilaDeshechos.mostrarTodos();
+
+        // muestra  el elemento más reciente (peek)
+        if (!pilaPrincipal.isEmpty()) {
+            System.out.println("Último elemento ingresado: '" + pilaPrincipal.peek() + "'");
+        } else {
+            System.out.println("No hay elementos en la pila principal.");
+        }
+    }
+
+    // metodo main para ejecutar el programa
+    public static void main(String[] args) {
+        EditorConPilas editor = new EditorConPilas();
+        editor.ejecutar();
+    }
+}
