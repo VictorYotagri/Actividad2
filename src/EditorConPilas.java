@@ -168,3 +168,15 @@ public class EditorConPilas {
 
         } while (!entradaValida || opcion != 4);
     }
+
+    // Deshacer: quita el último elemento de la pila principal y lo pone en la pila de deshechos
+    private void deshacer() {
+        if (!pilaPrincipal.isEmpty()) {
+            String datoDeshacer = pilaPrincipal.pop();
+            pilaDeshechos.push(datoDeshacer);
+            System.out.println("Se deshizo: '" + datoDeshacer + "'");
+            System.out.println("El dato se movió a la pila de deshechos.");
+        } else {
+            System.out.println("No hay información que deshacer.");
+        }
+    }
